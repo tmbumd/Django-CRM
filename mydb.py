@@ -8,6 +8,8 @@
 #django-admin startproject <projectName> (dcrm)
 #cd <projectName>
 #python manage.py startapp <name of app> (website)
+#winpty python manage.py createsuperuser
+#python manage.py runserver
 import mysql.connector
 
 dataBase = mysql.connector.connect(
@@ -18,7 +20,7 @@ dataBase = mysql.connector.connect(
 	)
 #Prepare cursor object
 
-cursorObject = dataBase.cursor()
+cursorObject = dataBase.cursor()f
 
 #Create Database
 cursorObject.execute("CREATE DATABASE elderco")
