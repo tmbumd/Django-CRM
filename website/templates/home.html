@@ -1,14 +1,61 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
+<div>
 
 <div class="col-md-6 offset-md-3">
 
 {% if user.is_authenticated %}
-<h1>hello world</h1>
+<h1>Records...</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Address</th>
+      <th scope="col">City</th>
+      <th scope="col">State</th>
+      <th scope="col">Zipcode</th>
+      <th scope="col">Created Atc</th>
+      <th scope="col">Address</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+
+    </tr>
+  
+{% if records %}
+  {% for record in records %}
+  <tr>
+     <td> {{record.first_name}}</br>
+      {{record.last_name}}</br></td>
+      <td>{{record.email}}</br></td>
+      <td>{{record.address}}</br></td>
+      <td>{{record.zipcode}}</td></br>
+      <td>{{ record.created_at}}</td></br>
+      <td>{{record.phone}}</td></br>
+      <td>{{record.state}}</td></br>
+      <td> {{record.city}}</td></br>
+      <td> {{record.id}}</td></br>
+  </tr>
+    </br>
+  </div>
+</tbody>
+    </table>
+
+  {% endfor %}
+
+
+{% endif %}
+
+
 {% else %}
 
+<div class="col-md-6 offset-md-3">
 <h1>Login</h1>
 <br/>
 
